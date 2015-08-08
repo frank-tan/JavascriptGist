@@ -1,0 +1,11 @@
+{
+  "predef": {
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "beforeEach": false
+  },
+  "globals": {
+    "Curry": true
+  }
+}
