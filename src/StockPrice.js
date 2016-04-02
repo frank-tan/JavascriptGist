@@ -3,6 +3,8 @@ var StockPrice = (function () {
 
   // Providing the stock price of a day, return the max profit you can gain.
   // Selling point must be after the buying point
+  // Time complexity O(n)
+  // Space complexity O(1)
   getMaxProfit = function (stockPricesYesterday) {
     var minPriceSoFar, currentPrice, maxGainSoFar, currentMaxGain;
 
@@ -12,7 +14,7 @@ var StockPrice = (function () {
     ArrayValidation.mustBeArrayType(stockPricesYesterday);
     ArrayValidation.atLeastTwoElements(stockPricesYesterday);
 
-    // use greedy algorithm to find max gain with O(n) complexity
+    // use greedy algorithm to find max gain with O(n) time complexity
     minPriceSoFar = stockPricesYesterday[0];
     maxGainSoFar = stockPricesYesterday[1] - stockPricesYesterday[0];
     for (var i = 1; i < stockPricesYesterday.length; i++) {
