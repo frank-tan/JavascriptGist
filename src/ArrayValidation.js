@@ -1,5 +1,5 @@
 var ArrayValidation = (function () {
-  var notUndefined, notNull, atLeastTwoElements, mustBeArrayType;
+  var notUndefined, notNull, atLeastXElements, mustBeArrayType;
 
   notUndefined = function (array) {
     if (typeof array === 'undefined') {
@@ -13,9 +13,9 @@ var ArrayValidation = (function () {
     }
   };
 
-  atLeastTwoElements = function (array) {
-    if (array.length < 2) {
-      throw 'Array must have at least two elements';
+  atLeastXElements = function (array, x) {
+    if (array.length < x) {
+      throw 'Array must have at least ' + x + ' elements';
     }
   };
 
@@ -28,7 +28,7 @@ var ArrayValidation = (function () {
   return {
     notUndefined: notUndefined,
     notNull: notNull,
-    atLeastTwoElements: atLeastTwoElements,
+    atLeastXElements: atLeastXElements,
     mustBeArrayType: mustBeArrayType
   };
 })();

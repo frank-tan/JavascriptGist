@@ -1,9 +1,5 @@
-describe('Product', function () {
+describe('Product of all others', function () {
   'use strict';
-
-  beforeEach(function () {
-
-  });
 
   it('Works for simple two element array', function () {
     var productArray = Product.productOfAllOthers([1, 2]);

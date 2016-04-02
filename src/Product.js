@@ -1,17 +1,19 @@
 var Product = (function () {
 
+  var productOfAllOthers, highestProductOfThree;
+
   // For a given array, eg, [1,2,3], return an array with each element being
   // the product of all other elements. Eg, [6,3,2]
   // No division is allowed
   // Time compexity O(n)
   // Space complexity O(n)
-  var productOfAllOthers = function (array) {
+  productOfAllOthers = function (array) {
     var length, arrayProductOthers, productSofar;
 
     ArrayValidation.notUndefined(array);
     ArrayValidation.notNull(array);
     ArrayValidation.mustBeArrayType(array);
-    ArrayValidation.atLeastTwoElements(array);
+    ArrayValidation.atLeastXElements(array, 2);
 
     length = array.length;
     arrayProductOthers = [];

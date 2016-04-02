@@ -12,7 +12,7 @@ var StockPrice = (function () {
     ArrayValidation.notUndefined(stockPricesYesterday);
     ArrayValidation.notNull(stockPricesYesterday);
     ArrayValidation.mustBeArrayType(stockPricesYesterday);
-    ArrayValidation.atLeastTwoElements(stockPricesYesterday);
+    ArrayValidation.atLeastXElements(stockPricesYesterday, 2);
 
     // use greedy algorithm to find max gain with O(n) time complexity
     minPriceSoFar = stockPricesYesterday[0];

@@ -1,10 +1,6 @@
 describe('ArrayValidation', function () {
   'use strict';
 
-  beforeEach(function () {
-
-  });
-
   it('Throw an exception when price array is not provided', function () {
     expect(function () {
       ArrayValidation.notUndefined();
@@ -19,8 +15,8 @@ describe('ArrayValidation', function () {
 
   it('Throw an exception when price array has less than two elements', function () {
     expect(function () {
-      ArrayValidation.atLeastTwoElements([1]);
-    }).toThrow('Array must have at least two elements');
+      ArrayValidation.atLeastXElements([1], 2);
+    }).toThrow('Array must have at least 2 elements');
   });
 
   it('Throw an exception when price array is not of Array type', function () {
