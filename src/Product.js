@@ -36,7 +36,56 @@ var Product = (function () {
     return arrayProductOthers;
   };
 
+  /*
+   * Given an array of integers, find the highest product from 3 elements
+   * Time complexity: O(n)
+   * Space complexity: O(1)
+   */
+  highestProductOfThree = function (array) {
+    var current, highest, lowest, highestTwoProduct, lowestTwoProduct, highestThreeProduct;
+
+    ArrayValidation.notUndefined(array);
+    ArrayValidation.notNull(array);
+    ArrayValidation.mustBeArrayType(array);
+    ArrayValidation.atLeastXElements(array, 3);
+
+    highest = Math.max(array[0], array[1]);
+    lowest = Math.min(array[0], array[1]);
+    highestTwoProduct = array[0] * array[1];
+    lowestTwoProduct = array[0] * array[1];
+    highestThreeProduct = array[0] * array[1] * array[2];
+
+    // use greedy algorithm to find 
+    for (var i = 2; i < array.length; i++) {
+      current = array[i];
+
+      // the highest product of three so far
+      highestThreeProduct = Math.max(
+        highestThreeProduct,
+        highestTwoProduct * current,
+        lowestTwoProduct * current);
+
+      // the highest and lowest product of two so far
+      highestTwoProduct = Math.max(
+        highestTwoProduct,
+        highest * current,
+        lowest * current);
+
+      lowestTwoProduct = Math.min(
+        lowest,
+        highest * current,
+        lowest * current);
+
+      // the highest and lowest element so far
+      highest = Math.max(highest, current);
+      lowest = Math.min(lowest, current);
+    }
+
+    return highestThreeProduct;
+  };
+
   return {
-    productOfAllOthers: productOfAllOthers
+    productOfAllOthers: productOfAllOthers,
+    highestProductOfThree: highestProductOfThree
   };
 })();
