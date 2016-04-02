@@ -3,9 +3,11 @@
     "describe": false,
     "it": false,
     "expect": false,
-    "beforeEach": false
+    "beforeEach": false,
+    "console": true
   },
   "globals": {
-    "Curry": true
+    "Curry": true,
+    "StockPrice": true
   }
 }
