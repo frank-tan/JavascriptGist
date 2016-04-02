@@ -23,15 +23,11 @@ var StockPrice = (function () {
     // use greedy algorithm to find max gain with O(n) complexity
     minPriceSoFar = stockPricesYesterday[0];
     maxGainSoFar = stockPricesYesterday[1] - stockPricesYesterday[0];
-    for (var i = 1; i <= stockPricesYesterday.length; i++) {
+    for (var i = 1; i < stockPricesYesterday.length; i++) {
       currentPrice = stockPricesYesterday[i];
       currentMaxGain = currentPrice - minPriceSoFar;
-      if (currentMaxGain > maxGainSoFar) {
-        maxGainSoFar = currentMaxGain;
-      }
-      if (currentPrice < minPriceSoFar) {
-        minPriceSoFar = currentPrice;
-      }
+      maxGainSoFar = Math.max(currentMaxGain, maxGainSoFar);
+      minPriceSoFar = Math.min(currentPrice, minPriceSoFar);
     }
     return maxGainSoFar;
   };
