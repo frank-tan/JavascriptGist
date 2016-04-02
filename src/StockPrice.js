@@ -7,18 +7,10 @@ var StockPrice = (function () {
     var minPriceSoFar, currentPrice, maxGainSoFar, currentMaxGain;
 
     // handle edge cases
-    if (typeof stockPricesYesterday === 'undefined') {
-      throw 'Price array must be provided';
-    }
-    if (stockPricesYesterday === null) {
-      throw 'Price array must not be null';
-    }
-    if (stockPricesYesterday.length < 2) {
-      throw 'Price array must have at least two elements';
-    }
-    if (Object.prototype.toString.call(stockPricesYesterday) !== '[object Array]') {
-      throw 'Price array must be a Javascript array';
-    }
+    ArrayValidation.notUndefined(stockPricesYesterday);
+    ArrayValidation.notNull(stockPricesYesterday);
+    ArrayValidation.mustBeArrayType(stockPricesYesterday);
+    ArrayValidation.atLeastTwoElements(stockPricesYesterday);
 
     // use greedy algorithm to find max gain with O(n) complexity
     minPriceSoFar = stockPricesYesterday[0];

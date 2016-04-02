@@ -8,6 +8,8 @@
   },
   "globals": {
     "Curry": true,
-    "StockPrice": true
+    "StockPrice": true,
+    "Product": true,
+    "ArrayValidation": true
   }
 }

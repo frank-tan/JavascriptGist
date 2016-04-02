@@ -8,25 +8,25 @@ describe('StockPrice', function () {
   it('Throw an exception when price array is not provided', function () {
     expect(function () {
       StockPrice.getMaxProfit();
-    }).toThrow('Price array must be provided');
+    }).toThrow('Array must be provided');
   });
 
   it('Throw an exception when price array is null', function () {
     expect(function () {
       StockPrice.getMaxProfit(null);
-    }).toThrow('Price array must not be null');
+    }).toThrow('Array must not be null');
   });
 
   it('Throw an exception when price array has less than two elements', function () {
     expect(function () {
       StockPrice.getMaxProfit([1]);
-    }).toThrow('Price array must have at least two elements');
+    }).toThrow('Array must have at least two elements');
   });
 
   it('Throw an exception when price array is not of Array type', function () {
     expect(function () {
       StockPrice.getMaxProfit('random');
-    }).toThrow('Price array must be a Javascript array');
+    }).toThrow('Array must be a Javascript array');
   });
 
   it('Works when highest price occurs after lowest', function () {
